@@ -1,2 +1,14 @@
 <h1>Pages#home</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
+
+<% if current_user %>
+   <p>Welcome, <%= current_user.email %>!</p>
+   <p> 
+    You have successfully registered with  you devise account
+   </p>
+   <% else %>
+   <p>You are not signed in</p>
+    <%= link_to 'Sign In', new_user_registration_path %>
+    </br>
+    <%= link_to 'Login', new_user_session_path %>
+<% end %>
